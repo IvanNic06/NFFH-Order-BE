@@ -9,7 +9,6 @@ import jakarta.persistence.*;
 @Table(name = "Orders")
 @Entity
 public class Order {
-    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false)
@@ -36,23 +35,65 @@ public class Order {
     private boolean accepted;
 
 
+    
     public Integer getId() {
         return id;
     }
+
+
+
+
+
 
 
     public void setId(Integer id) {
         this.id = id;
     }
 
-    public float getCommission() {
+
+
+
+
+
+
+    public Integer getClient() {
+        return client;
+    }
+
+
+
+
+
+
+
+    public void setClient(Integer client) {
+        this.client = client;
+    }
+
+
+
+
+
+
+
+    public Float getCommission() {
         return commission;
     }
 
 
-    public void setCommission(float commission) {
+
+
+
+
+
+    public void setCommission(Float commission) {
         this.commission = commission;
     }
+
+
+
+
+
 
 
     public String getDate() {
@@ -60,19 +101,39 @@ public class Order {
     }
 
 
+
+
+
+
+
     public void setDate(String date) {
         this.date = date;
     }
 
 
-    public float getTotal() {
+
+
+
+
+
+    public Float getTotal() {
         return total;
     }
 
 
-    public void setTotal(float total) {
+
+
+
+
+
+    public void setTotal(Float total) {
         this.total = total;
     }
+
+
+
+
+
 
 
     public boolean isAccepted() {
@@ -80,18 +141,17 @@ public class Order {
     }
 
 
+
+
+
+
+
     public void setAccepted(boolean accepted) {
         this.accepted = accepted;
     }
 
-    public Integer getIdClient() {
-        return client;
-    }
 
-
-    public void setIdClient(Integer client) {
-        this.client = client;
-    }
+    
 
 
     @Override
@@ -101,7 +161,6 @@ public class Order {
     }
 
 
-    
-
 
 }
+
