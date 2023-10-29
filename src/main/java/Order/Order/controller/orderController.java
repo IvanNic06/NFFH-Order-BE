@@ -89,7 +89,7 @@ public class orderController {
 
             System.out.println(orderPartList.toString());
             
-            orderElement orderElem = new orderElement(orderID, orderPartList, i, order.getDate(), order.getTotal(), order.isAccepted());
+            orderElement orderElem = new orderElement(orderID, orderPartList, String.valueOf(i), order.getCommission(),order.getDate(), order.getTotal(), order.isAccepted());
 
             orderElementList.add(orderElem);
         }
