@@ -7,34 +7,22 @@ import Order.Order.entities.OrderPart;
 public class orderElement {
 
     public int orderID;
-    public List<OrderPart> orderPartList;
-    public String orderPartID; 
-    public String commission;
+    public List<OrderPart> orderPartList; 
+    public float commission;
     public String pickup;
-    public String total;
+    public float total;
     public boolean accepted;
     
-
-
-    public orderElement() {
-    }
-
-
     
-
-    public orderElement(int orderID, List<OrderPart> orderPartList, String orderPartID, String commission,
-            String pickup, String total, boolean accepted) {
+    public orderElement(int orderID, List<OrderPart> orderPartList, float commission, String pickup, float total,
+            boolean accepted) {
         this.orderID = orderID;
         this.orderPartList = orderPartList;
-        this.orderPartID = orderPartID;
         this.commission = commission;
         this.pickup = pickup;
         this.total = total;
         this.accepted = accepted;
     }
-
-
-    
 
 
     public int getOrderID() {
@@ -57,12 +45,12 @@ public class orderElement {
     }
 
 
-    public String getCommission() {
+    public float getCommission() {
         return commission;
     }
 
 
-    public void setCommission(String commission) {
+    public void setCommission(float commission) {
         this.commission = commission;
     }
 
@@ -77,12 +65,12 @@ public class orderElement {
     }
 
 
-    public String getTotal() {
+    public float getTotal() {
         return total;
     }
 
 
-    public void setTotal(String total) {
+    public void setTotal(float total) {
         this.total = total;
     }
 
@@ -95,23 +83,6 @@ public class orderElement {
     public void setAccepted(boolean accepted) {
         this.accepted = accepted;
     }
-
-
-
-
-    public String getOrderPartID() {
-        return orderPartID;
-    }
-
-
-
-
-    public void setOrderPartID(String orderPartID) {
-        this.orderPartID = orderPartID;
-    }
-
-
-    
 
     
     

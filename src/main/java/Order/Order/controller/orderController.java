@@ -72,33 +72,33 @@ public class orderController {
 
 
     //GET ORDER LIST OF A SINGLE CUSTOMER
-    
-//\    @GetMapping("/order/client/myorder")
-//\    public ResponseEntity<GetOrderListClientResponse> getOrderByClientID(@RequestParam int id){
-//\        
-//\        List<Order> orderList = this.orderService.findByClient(id);
-//\        List<OrderPart> orderPartList;
-//\        List<orderElement> orderElementList = new ArrayList<orderElement>();
-//\
-//\        for (int i = 0; i < orderList.size(); i++){
-//\            
-//\            
-//\            Order order = orderList.get(i);
-//\            int orderID = order.getId();
-//\            orderPartList = this.orderPartRepository.findByidOrder(orderID);
-//\
-//\            System.out.println(orderPartList.toString());
-//\            
-//\            orderElement orderElem = new orderElement(orderID, orderPartList, String.valueOf(i), order.getCommission(),order.getDate(), order.getTotal(), order.isAccepted());
-//\
-//\            orderElementList.add(orderElem);
-//\        }
-//\
-//\        GetOrderListClientResponse response = new GetOrderListClientResponse(orderElementList);
-//\
-//\        
-//\        return new ResponseEntity<GetOrderListClientResponse>(response, HttpStatus.OK);
-//    }
+
+    @GetMapping("/order/client/myorder")
+    public ResponseEntity<GetOrderListClientResponse> getOrderByClientID(@RequestParam int id){
+        
+        List<Order> orderList = this.orderService.findByClient(id);
+        List<OrderPart> orderPartList;
+        List<orderElement> orderElementList = new ArrayList<orderElement>();
+
+        for (int i = 0; i < orderList.size(); i++){
+            
+            
+            Order order = orderList.get(i);
+            int orderID = order.getId();
+            orderPartList = this.orderPartRepository.findByidOrder(orderID);
+
+            System.out.println(orderPartList.toString());
+            
+            orderElement orderElem = new orderElement(orderID, orderPartList, i, order.getDate(), order.getTotal(), order.isAccepted());
+
+            orderElementList.add(orderElem);
+        }
+
+        GetOrderListClientResponse response = new GetOrderListClientResponse(orderElementList);
+
+        
+        return new ResponseEntity<GetOrderListClientResponse>(response, HttpStatus.OK);
+    }
 
     //Get all order performed by a farmer
 

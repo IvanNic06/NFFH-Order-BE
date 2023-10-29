@@ -16,11 +16,11 @@ public class Order {
 
 
     @Column(name = "client", length = 200, nullable = false)
-    private String client;
+    private Integer client;
 
 
     @Column(name = "commission", length = 200, nullable = false)
-    private String commission;
+    private Float commission;
 
 
     @Column(name = "pickup", length = 200, nullable = false)
@@ -28,34 +28,22 @@ public class Order {
 
 
     @Column(name = "total", length = 200, nullable = false)
-    private String total;
+    private Float total;
 
 
     @Column(name = "accepted", nullable = false)
     private boolean accepted;
 
 
-    public Order(Integer id, String client, String commission, String date, String total, boolean accepted) {
-        this.id = id;
-        this.client = client;
-        this.commission = commission;
-        this.date = date;
-        this.total = total;
-        this.accepted = accepted;
-    }
-
     
-
-
-    public Order() {
-    }
-
-
-
-
     public Integer getId() {
         return id;
     }
+
+
+
+
+
 
 
     public void setId(Integer id) {
@@ -63,24 +51,49 @@ public class Order {
     }
 
 
-    public String getClient() {
+
+
+
+
+
+    public Integer getClient() {
         return client;
     }
 
 
-    public void setClient(String client) {
+
+
+
+
+
+    public void setClient(Integer client) {
         this.client = client;
     }
 
 
-    public String getCommission() {
+
+
+
+
+
+    public Float getCommission() {
         return commission;
     }
 
 
-    public void setCommission(String commission) {
+
+
+
+
+
+    public void setCommission(Float commission) {
         this.commission = commission;
     }
+
+
+
+
+
 
 
     public String getDate() {
@@ -88,24 +101,49 @@ public class Order {
     }
 
 
+
+
+
+
+
     public void setDate(String date) {
         this.date = date;
     }
 
 
-    public String getTotal() {
+
+
+
+
+
+    public Float getTotal() {
         return total;
     }
 
 
-    public void setTotal(String total) {
+
+
+
+
+
+    public void setTotal(Float total) {
         this.total = total;
     }
+
+
+
+
+
 
 
     public boolean isAccepted() {
         return accepted;
     }
+
+
+
+
+
 
 
     public void setAccepted(boolean accepted) {
@@ -114,7 +152,14 @@ public class Order {
 
 
     
-    
+
+
+    @Override
+    public String toString() {
+        return "Order [id=" + id + ", commission=" + commission + ", date=" + date
+                + ", total=" + total + ", accepted=" + accepted + "]";
+    }
+
 
 
 }
